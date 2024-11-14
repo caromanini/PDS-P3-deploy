@@ -1,0 +1,29 @@
+<!-- lockers/templates/lockers/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Locker Project Home</title>
+</head>
+<body>
+    <h1>Welcome to the Locker Project</h1>
+    <p>This is the homepage</p>
+
+    <!-- Mostrar la lista de lockers -->
+    <h2>Available Lockers</h2>
+    <ul>
+        {% for locker in lockers %}
+        <li>
+            Locker ID: {{ locker.id }}<br>
+            Controller ID: {{ locker.controller_id }}<br>
+            Password: {{ locker.password}}<br>
+            Owner Email: {{ locker.owner_email }}<br>
+            <a href="{% url 'change_owner_email' locker.id %}">Change Owner Email</a>
+            <a href="{% url 'change_password' locker.id %}">Change Password</a>
+        </li>
+        {% empty %}
+            <li>No lockers available</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

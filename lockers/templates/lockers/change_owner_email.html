@@ -1,0 +1,19 @@
+<!-- lockers/templates/lockers/change_owner_email.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Owner Email</title>
+</head>
+<body>
+    <h1>Change Owner Email for Locker {{ locker.id }}</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.owner_email.label_tag }} {{ form.owner_email }}
+        <button type="submit">Save New Email</button>
+    </form>
+    
+    <a href="{% url 'index' %}">Back to Home</a>
+</body>
+</html>
