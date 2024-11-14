@@ -11,7 +11,9 @@ import paho.mqtt.client as mqtt
 
 # Configuracion MQTT
 # broker = '192.168.54.124'
-broker = '172.31.162.160'
+broker = 'locker_project.koyeb.app'
+# broker = '172.31.162.160'
+# broker = '186.10.216.200'
 port = 1883
 topic_send = "esp32/message"
 topic_response = "django/response"
